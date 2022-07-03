@@ -1,13 +1,15 @@
 import { BsFillFileCheckFill } from "react-icons/bs";
+import AddTodo from "./components/AddTodo";
 
 const App = () => {
   return (
     <>
-      <div className="p-2">
-        <div className="text-center p-2 flex items-center justify-center gap-4">
+      <div className="p-2 flex flex-col items-center">
+        <div className="text-center p-2 flex items-center justify-center gap-4 mb-6">
           <h1 className="text-5xl">My Todos</h1>
           <BsFillFileCheckFill className="text-5xl text-green-700" />
         </div>
+        <AddTodo />
       </div>
     </>
   );

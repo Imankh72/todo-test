@@ -12,6 +12,8 @@ const todosReducer = (state, action) => {
         ...state,
         todos: todos.filter((todo) => todo.id !== action.payload),
       };
+    case "DELETE_ALL_TODOS":
+      return { ...state, todos: [] };
     default:
       return state;
   }
@@ -35,8 +37,12 @@ export const TodosProvider = ({ children }) => {
 
   const deleteTodo = (id) => dispatch({ type: "DELETE_TODO", payload: id });
 
+  const deleteAllTodos = () => dispatch({ type: "DELETE_ALL_TODOS" });
+
   return (
-    <TodosContext.Provider value={{ ...state, addTodo, deleteTodo }}>
+    <TodosContext.Provider
+      value={{ ...state, addTodo, deleteTodo, deleteAllTodos }}
+    >
       {children}
     </TodosContext.Provider>
   );

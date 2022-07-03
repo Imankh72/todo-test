@@ -23,7 +23,7 @@ const App = () => {
           </div>
           <AddTodo setTodos={setTodos} />
           <TodoList todos={todos} deleteTodo={deleteTodo} />
-          <TodosBox />
+          <TodosBox todos={todos} setTodos={setTodos} />
         </div>
       </div>
     </>

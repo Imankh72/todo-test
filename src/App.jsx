@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { BsFillFileCheckFill } from "react-icons/bs";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
+
   return (
     <>
       <div>
@@ -11,7 +14,7 @@ const App = () => {
             <h1 className="text-5xl">My Todos</h1>
             <BsFillFileCheckFill className="text-5xl text-green-700" />
           </div>
-          <AddTodo />
+          <AddTodo todos={todos} setTodos={setTodos} />
           <TodoList />
         </div>
       </div>

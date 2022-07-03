@@ -3,6 +3,7 @@ import { useState } from "react";
 const AddTodo = ({ todos, setTodos }) => {
   const [todo, setTodo] = useState("");
 
+  // Function for submit and add todo
   const submitHandler = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -12,7 +13,6 @@ const AddTodo = ({ todos, setTodos }) => {
 
     setTodos((prevTodos) => [...prevTodos, newTodo]);
     setTodo("");
-    console.log(todos);
   };
 
   return (

@@ -6,6 +6,12 @@ import TodoList from "./components/TodoList";
 const App = () => {
   const [todos, setTodos] = useState([]);
 
+  // Function for delete todo
+  const deleteTodo = (id) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
+  };
+
   return (
     <>
       <div>
@@ -15,7 +21,7 @@ const App = () => {
             <BsFillFileCheckFill className="text-5xl text-green-700" />
           </div>
           <AddTodo todos={todos} setTodos={setTodos} />
-          <TodoList />
+          <TodoList todos={todos} deleteTodo={deleteTodo} />
         </div>
       </div>
     </>

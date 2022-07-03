@@ -1,6 +1,6 @@
 import { BsTrashFill, BsSortUp } from "react-icons/bs";
 
-const Todo = ({ content, id, deleteTodo }) => {
+const Todo = ({ content, id, deleteTodo, sortTodos }) => {
   return (
     <>
       <div className="w-[90%] flex items-center justify-between border border-gray-600 py-2 px-4 rounded-lg shadow-md md:w-[55%]">
@@ -10,7 +10,10 @@ const Todo = ({ content, id, deleteTodo }) => {
             className="text-red-500 text-2xl cursor-pointer transition-all hover:text-red-700"
             onClick={() => deleteTodo(id)}
           />
-          <BsSortUp className="text-blue-500 text-2xl cursor-pointer transition-all hover:text-blue-700" />
+          <BsSortUp
+            className="text-blue-500 text-2xl cursor-pointer transition-all hover:text-blue-700"
+            onClick={() => sortTodos(id)}
+          />
         </div>
       </div>
     </>

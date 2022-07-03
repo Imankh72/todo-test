@@ -16,6 +16,16 @@ const App = () => {
   // Function for delete all todos
   const deleteAllTodos = () => setTodos([]);
 
+  // Function for sort todos
+  const sortTodos = (id) => {
+    const selectedTodo = todos.find((todo) => +todo.id === id);
+    const firstTodo = todos.find((todo) => +todo.id === 1);
+    firstTodo.id = selectedTodo.id;
+    selectedTodo.id = "1";
+    const sortedTodos = [...todos].sort((a, b) => +a.id - +b.id);
+    setTodos(sortedTodos);
+  };
+
   return (
     <>
       <div className="h-[100%] p-6 flex flex-col items-center bg-gray-100 md:max-w-7xl md:mx-auto">
@@ -28,6 +38,7 @@ const App = () => {
           todos={todos}
           deleteTodo={deleteTodo}
           deleteAllTodos={deleteAllTodos}
+          sortTodos={sortTodos}
         />
         <TodosBox todos={todos} setTodos={setTodos} />
       </div>

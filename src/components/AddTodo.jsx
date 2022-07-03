@@ -1,6 +1,6 @@
 const AddTodo = () => {
   return (
-    <div className="w-full text-center flex items-center justify-center gap-4 ">
+    <div className="w-full text-center flex items-center justify-center gap-4 mb-14">
       <input
         type="text"
         placeholder="Add todo"

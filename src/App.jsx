@@ -13,6 +13,9 @@ const App = () => {
     setTodos(filteredTodos);
   };
 
+  // Function for delete all todos
+  const deleteAllTodos = () => setTodos([]);
+
   return (
     <>
       <div className="h-[100%] p-6 flex flex-col items-center bg-gray-100 md:max-w-7xl md:mx-auto">
@@ -20,8 +23,12 @@ const App = () => {
           <h1 className="text-5xl">My Todos</h1>
           <BsFillFileCheckFill className="text-5xl text-green-700" />
         </div>
-        <AddTodo setTodos={setTodos} />
-        <TodoList todos={todos} deleteTodo={deleteTodo} />
+        <AddTodo todos={todos} setTodos={setTodos} />
+        <TodoList
+          todos={todos}
+          deleteTodo={deleteTodo}
+          deleteAllTodos={deleteAllTodos}
+        />
         <TodosBox todos={todos} setTodos={setTodos} />
       </div>
     </>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const AddTodo = ({ setTodos }) => {
+const AddTodo = ({ todos, setTodos }) => {
   const [todo, setTodo] = useState("");
 
   const ref = useRef(null);
@@ -13,10 +13,19 @@ const AddTodo = ({ setTodos }) => {
   // Function for submit and add todo
   const submitHandler = (e) => {
     e.preventDefault();
-    const newTodo = {
-      id: Math.floor(Math.random() * 1000),
-      content: todo,
-    };
+    let newTodo = {};
+
+    if (todos.length > 0) {
+      newTodo = {
+        id: +todos.at(-1).id + 1,
+        content: todo,
+      };
+    } else if (todos.length === 0) {
+      newTodo = {
+        id: 1,
+        content: todo,
+      };
+    }
 
     setTodos((prevTodos) => [...prevTodos, newTodo]);
     setTodo("");

@@ -6,6 +6,7 @@ const AddTodo = ({ setTodos }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    // Auto focus on input at first render
     ref.current.focus();
   }, []);
 
@@ -34,7 +35,10 @@ const AddTodo = ({ setTodos }) => {
         onChange={(e) => setTodo(e.target.value)}
         ref={ref}
       />
-      <button className="text-4xl text-white flex items-center justify-center bg-green-700 py-1 px-4 rounded-xl transition-all duration-300 hover:bg-green-800">
+      <button
+        className="text-4xl text-white flex items-center justify-center bg-green-700 py-1 px-4 rounded-xl transition-all duration-300 hover:bg-green-800"
+        disabled={!todo}
+      >
         +
       </button>
     </form>

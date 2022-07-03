@@ -15,16 +15,14 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <div className="h-[100vh] p-2 flex flex-col items-center bg-gray-100 md:max-w-7xl md:mx-auto">
-          <div className="text-center p-2 flex items-center justify-center gap-4 mb-6">
-            <h1 className="text-5xl">My Todos</h1>
-            <BsFillFileCheckFill className="text-5xl text-green-700" />
-          </div>
-          <AddTodo setTodos={setTodos} />
-          <TodoList todos={todos} deleteTodo={deleteTodo} />
-          <TodosBox todos={todos} setTodos={setTodos} />
+      <div className="h-[100%] p-6 flex flex-col items-center bg-gray-100 md:max-w-7xl md:mx-auto">
+        <div className="text-center p-2 flex items-center justify-center gap-4 mb-6">
+          <h1 className="text-5xl">My Todos</h1>
+          <BsFillFileCheckFill className="text-5xl text-green-700" />
         </div>
+        <AddTodo setTodos={setTodos} />
+        <TodoList todos={todos} deleteTodo={deleteTodo} />
+        <TodosBox todos={todos} setTodos={setTodos} />
       </div>
     </>
   );

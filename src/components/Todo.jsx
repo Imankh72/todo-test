@@ -1,5 +1,17 @@
+import { useTodos } from "../hooks/useTodos";
+
 const Todo = () => {
-  return <div></div>;
+  const { todos } = useTodos();
+
+  console.log(todos);
+
+  return (
+    <div>
+      {todos.map((todo) => (
+        <div key={todo.id}>{todo.content}</div>
+      ))}
+    </div>
+  );
 };
 
 export default Todo;

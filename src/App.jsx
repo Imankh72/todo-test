@@ -1,5 +1,6 @@
 import { BsFillFileCheckFill } from "react-icons/bs";
 import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
           <BsFillFileCheckFill className="text-5xl text-green-700" />
         </div>
         <AddTodo />
+        <TodoList />
       </div>
     </>
   );

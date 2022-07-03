@@ -1,5 +1,11 @@
+import Todo from "./Todo";
+
 const TodoList = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Todo />
+    </div>
+  );
 };
 
 export default TodoList;

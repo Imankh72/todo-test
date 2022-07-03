@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 import { todos } from "../data/db";
 
 export const TodosContext = createContext();
@@ -12,11 +12,24 @@ const todosReducer = (state, action) => {
         ...state,
         todos: todos.filter((todo) => todo.id !== action.payload),
       };
+    default:
+      return state;
   }
 };
 
 export const TodosProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(first, todos);
+  const [state, dispatch] = useReducer(todosReducer, {
+    todos: [
+      {
+        id: "1",
+        content: "Learning React",
+      },
+      {
+        id: "2",
+        content: "Learning NextJs",
+      },
+    ],
+  });
 
   const addTodo = (todo) => dispatch({ type: "ADD_TODO", payload: todo });
 

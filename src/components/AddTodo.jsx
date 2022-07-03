@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const AddTodo = ({ todos, setTodos }) => {
+const AddTodo = ({ setTodos }) => {
   const [todo, setTodo] = useState("");
 
   const ref = useRef(null);
